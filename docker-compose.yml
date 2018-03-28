@@ -1,0 +1,16 @@
+version: '3'
+services:
+    postgres-db:
+      container_name: postgres-db
+      image: postgres:9.4
+      restart: always
+      ports:
+        - 5432:5432
+      environment:
+        - POSTGRES_USER=labfix
+        - POSTGRES_DB=northwind
+        - POSTGRES_PASSWORD=1234
+      volumes:
+        - postgresdata:/var/lib/postgresql/data
+volumes:
+  postgresdata:
